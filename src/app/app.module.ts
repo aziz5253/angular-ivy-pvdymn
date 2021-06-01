@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -14,10 +14,10 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 // Add dependencies to FusionChartsModule
-FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, FusionChartsModule],
+  declarations: [AppComponent, HelloComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
